@@ -10,12 +10,15 @@ Expo provides us with a managed app development environment, similar to create-r
 
 0. You need an up-to-date NodeJS version, but you should already have it installed, please install [NodeJS](https://nodejs.org/en/) if that's not the case.
 1. Visit [Expo.io](https://expo.io/learn) and install the Expo command line tool by typing `npm install expo-cli --global` in your terminal, if you run into permissions issues install the tool with `sudo npm install expo-cli --global` instead.
+   1. MacOS only: [Install Watchman](https://facebook.github.io/watchman/docs/install.html) with `brew install watchman`
 1. Let's create our first project! in your terminal, navigate to a folder where you want to create the project and run `expo init hello-world`, select the template `blank - a minimal app as clean as an empty canvas` and wait for the installation to finish, then `cd hello-world` and run `npm start` to start up the expo dev tools. You will need to leave that process running in the background.
 1. A tab should open in your browser at `http://localhost:19002/`, please switch to it; this is the **Expo DevTools** and it allows you to run your app on devices simulators or on connected devices. Due to network issues here at A6K you'll need to pick _tunnel_ as a connection method, please make sure the tunnel url looks like `exp://dp-k8n.kevinlabtani.hello-world.exp.direct:80` rather than `exp://192.168.1.5:19000`, if it doesn't you'll get the message _Tunnel URL not found, falled back to LAN URL._ in your console window, please stop the Expo server by typing `CTRL + C` and then restart it with `npm start`; running it as admin `sudo npm start` or forcing tunnel mode at startup with `sudo expo start --tunnel` instead might help.
+
    ![tunnel](./readme-pics/expo-dev-tools-tunnel.png)
+
 1. The easiest way to view your project is to use your own device, for that you'll need to install the Expo Client App on your mobile phone; simply search for _Expo client_ in your app store and install it on your device. Once installed start the Expo Client (you don't need to sign up). On Android scan the QR code from the Expo App, on IOS use the Camera App and scan the QR code. On the first run it'll take some time for the JavaScript Bundle to build, don't worry, it'll be much faster on subsequent runs! If everything worked, you should see _Open up App.js to start working on your app!_
 
-### Running the App on a Simulator
+### Running the App on a Simulator (Optional)
 
 1. Install [Android Studio](https://developer.android.com/studio) please refer to [Quentin & Jonathan tutorial](https://petroons-jonathan.github.io/flutter-app/) if you need step by step instructions.
 2. Launch **Android Studio** (`./studio.sh` in terminal from the _android-studio/bin_ folder on linux)
