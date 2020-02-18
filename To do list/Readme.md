@@ -1,6 +1,6 @@
 # ToDo App
 
-So now you are ready to start to create your first React Native Application!
+So now you are ready to create your first React Native Application!
 
 ## Part - 1.
 
