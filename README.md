@@ -4,7 +4,7 @@
 
 We have two options for creating a new React Native App, either **Expo CLI** or **React Native CLI**.
 We'll be using the **Expo CLI** in this workshop; it's a 3rd party service that's free to use, you don't even need to sign-up!
-Expo provides us with a managed app development environment, similar to create-react-app for React. The main downside with Expo is that you're limited to its ecosystem, so it's not possible to include custom native modules beyond the React Native APIs and components that are available in the Expo client app; but much like with create-react-app it's possible to eject from Expo if you want to eventually create your own native build.
+Expo provides us with a managed app development environment, similar to create-react-app for React. The main downside with Expo is that you're limited to its ecosystem, so it's not possible to include custom native modules beyond the React Native APIs and components that are available in the Expo client app; but much like with create-react-app it'ICs possible to eject from Expo if you want to eventually create your own native build.
 
 ### Installation Steps
 
@@ -30,3 +30,34 @@ Expo provides us with a managed app development environment, similar to create-r
 5. launch your Expo App on the emulator by going to the **Expo DevTools** window in your browser and click on _Run on Android device/emulator_
 
 ## What is React Native
+
+## React Native Basics
+
+Let's go back to our Hello World App!
+
+### Basic Components
+
+With React Native, you can't use HTML elements (e.g. `<div>`, `<p>`, `<input>`), you use built-in components specific to React Native instead.
+
+```js
+<View style={styles.container}>
+  <Text>Open up App.js to start working on your app!</Text>
+</View>
+```
+
+The `<View>` component is the equivalent of a `<div>` or a `<span>` component in html, we use it to group other components together, structure them and add some container styling.
+
+The `<Text>` component is used to output text.
+
+You style React Native Apps by using JavaScript, all of the core components accept a `style` prop. Android & IOS devices don't support CSS, but React Native emulates the idea of CSS. You can directly pass a JavaScript object to the `style` prop, but typically you'll use the `StyleSheet` component, which is basically an abstraction similar to CSS StyleSheets and also add validation and potential performance improvements compared to passing a POJO to the `style` prop.
+
+```js
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+});
+```
