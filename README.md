@@ -87,8 +87,59 @@ const styles = StyleSheet.create({
 });
 ```
 
+### State with useState Hook
+
+In React, There are two types of data that control a component:
+
+- props (short for properties) are a component's configuration. They are received from it's parent and immutable as far as the component receiving them is concerned.
+
+- state is data maintained inside a component. It is local and owned by that specific component. A component will update its own state. State starts with a default value when a component mounts.
+
+```js
+import React, { useState } from "react";
+
+export default function App() {
+  const [name, setName] = useState("Kevin");
+```
+
+When setName is called, React will re-render the component.
+
+```js
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Button } from "react-native";
+
+export default function App() {
+  const [name, setName] = useState("Kevin");
+
+  const pressHandler = () => {
+    setName("Valeriya");
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text>My name is {name}</Text>
+      <View style={styles.buttonContainer}>
+        <Button title="update state" onPress={pressHandler} />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#eee",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  buttonContainer: {
+    marginTop: 20
+  }
+});
+```
+
 ## Debugging React Native Apps
 
 ![Debbuging react native - debug](./readme-pics/debug.png)
 
-The best way to debug your React Native App is to use React Native Debugger.  You can find all information about this tool [on its official github page](https://github.com/jhen0409/react-native-debugger).
+The best way to debug your React Native App is to use React Native Debugger. You can find all information about this tool [on its official github page](https://github.com/jhen0409/react-native-debugger).
