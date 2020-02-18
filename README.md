@@ -59,6 +59,6 @@ Facebook released the first version for the React JavaScript Configuration in 20
 
 ### Debugging React Native Apps
 
-![Debbuging react native - debug](./img/debug.png)
+![Debbuging react native - debug](./images/debug.png)
 
 The best way to debug your React Native App is to use React Native Debugger.  You can find all information about this tool [on its official github](https://github.com/jhen0409/react-native-debugger).
