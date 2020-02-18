@@ -56,14 +56,14 @@ list: {
 
 Next thing, that you will do - it's a header. To separate the different parts of the app and make easier to update the code - create a new folder "components" and inside it - a new file header.js. Also, it makes the code reusable, lately if you want you can use this component in different parts of your app.
 
-In the top of header js copy-paste the following code: 
+In the top of header.js copy-paste the following code: 
 
 ```js
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 ```
 
-Now you need to create a new functional component Header, using "default export" because you want it to import automatically. Inside this function, you will return a View component with a Text component, that says 'My Todos'. The View has style property {styles.header} and the Text component - {styles.title}.
+Now you need to create a new functional component Header, using "default export" because you want to export it automatically. Inside this function, you will return a View component with a Text component, that says 'My Todos'. The View has style property {styles.header} and the Text component - {styles.title}.
 
 Now you need to create a StyleSheet as well. Inside your styles object you have props:
 
@@ -114,8 +114,7 @@ const styles = StyleSheet.create({
 ```
 ### 1.4
 
-Now you have to import your Header component in the App.js and replace the comment "Header" with <Header /> component.
-
+Now you have to import your Header component in the App.js and replace the comment "Header" with the < Header /> component.
 Finally, you should have this code in your App.js 
 
 ```js
