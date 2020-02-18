@@ -70,9 +70,9 @@ With React Native, you can't use HTML elements (e.g. `<div>`, `<p>`, `<input>`),
 </View>
 ```
 
-The `<View>` component is the equivalent of a `<div>` or a `<span>` component in html, we use it to group other components together, structure them and add some container styling.
+The [`<View>`](https://facebook.github.io/react-native/docs/view) component is the equivalent of a `<div>` or a `<span>` component in html, we use it to group other components together, structure them and add some container styling.
 
-The `<Text>` component is used to output text.
+The [`<Text>`](https://facebook.github.io/react-native/docs/text) component is used to output text.
 
 You style React Native Apps by using JavaScript, all of the core components accept a `style` prop. Android & IOS devices don't support CSS, but React Native emulates the idea of CSS. You can directly pass a JavaScript object to the `style` prop, but typically you'll use the `StyleSheet` component, which is basically an abstraction similar to CSS StyleSheets and also add validation and potential performance improvements compared to passing a POJO to the `style` prop.
 
@@ -87,8 +87,151 @@ const styles = StyleSheet.create({
 });
 ```
 
+### State with useState Hook
+
+In React, There are two types of data that control a component:
+
+- props (short for properties) are a component's configuration. They are received from it's parent and immutable as far as the component receiving them is concerned.
+
+- state is data maintained inside a component. It is local and owned by that specific component. A component will update its own state. State starts with a default value when a component mounts.
+
+```js
+import React, { useState } from "react";
+
+export default function App() {
+  const [name, setName] = useState("Kevin");
+```
+
+When setName is called, React will re-render the component.
+
+```js
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Button } from "react-native";
+
+export default function App() {
+  const [name, setName] = useState("Kevin");
+
+  const pressHandler = () => {
+    setName("Valeriya");
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text>My name is {name}</Text>
+      <View style={styles.buttonContainer}>
+        <Button title="update state" onPress={pressHandler} />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#eee",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  buttonContainer: {
+    marginTop: 20
+  }
+});
+```
+
+### Text Input
+
+The [`<TextInput>`](https://facebook.github.io/react-native/docs/textinput) component allows us to input text into the app via a keyboard.
+
+```js
+...
+<View style={styles.container}>
+  <TextInput
+    style={styles.textInput}
+    placeholder="Please enter a name"
+    onChangeText={newName => setName(newName)}
+  />
+  ...
+</View>
+  ...
+  const styles = StyleSheet.create({
+  ...
+  textInput: {
+    width: "70%",
+    borderColor: "black",
+    borderWidth: 1,
+    padding: 10,
+    marginBottom: 10
+  }
+});
+```
+
+### Lists with ScrollView
+
+```js
+// starting code for App.js
+import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
+
+export default function App() {
+  const [items, setItems] = useState([
+    { name: "apple", id: "1" },
+    { name: "desk", id: "2" },
+    { name: "tomato", id: "3" },
+    { name: "computer", id: "4" },
+    { name: "coffee", id: "5" },
+    { name: "projector", id: "6" },
+    { name: "bag", id: "7" }
+  ]);
+
+  return <View style={styles.container}></View>;
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#eee",
+    paddingTop: 40,
+    paddingHorizontal: 20
+  }
+});
+```
+
+The [`<ScrollView>`](https://facebook.github.io/react-native/docs/using-a-scrollview) component provides us with a way of outputing a scrollable list. ScrollView works by rendering all its child components at once.
+
+To output a list you can just map over an array of items the way you do it in React.JS:
+
+```js
+<View style={styles.container}>
+  {items.map(item => {
+    return (
+      <View key={item.id}>
+        <Text style={styles.item}>{item.name}</Text>
+      </View>
+    );
+  })}
+</View>
+```
+
+If we apply some styling to our list of items...
+
+```js
+const styles = StyleSheet.create({
+  ...
+  item: {
+    padding: 25,
+    marginVertical: 12,
+    backgroundColor: "lightsteelblue",
+    borderColor: "black",
+    borderWidth: 1,
+    fontSize: 24
+  }
+});
+```
+We notice than while the list renders okay, it's not possible to scroll the list!
+Simply wrap the outer `<View>` with a `<ScrollView>` component and you'll get a scrollable list.
+
 ## Debugging React Native Apps
 
 ![Debbuging react native - debug](./readme-pics/debug.png)
 
-The best way to debug your React Native App is to use React Native Debugger.  You can find all information about this tool [on its official github page](https://github.com/jhen0409/react-native-debugger).
+The best way to debug your React Native App is to use React Native Debugger. You can find all information about this tool [on its official github page](https://github.com/jhen0409/react-native-debugger).
