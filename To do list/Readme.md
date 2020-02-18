@@ -133,13 +133,15 @@ export default function App() {
      <Header />
      <View style={styles.content}>
        {/* to form */}
-       <FlatList
-       data={todos}
-       renderItem={({ item }) => (
-       <Text>{item.text}</Text>
-       )}
-      />
-     </View>
+        <View  style={styles.list}>
+          <FlatList
+          data={todos}
+          renderItem={({ item }) => (
+          <Text>{item.text}</Text>
+          )}
+          />
+        </View>
+      </View>
     </View>
   );
 }
