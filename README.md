@@ -70,9 +70,9 @@ With React Native, you can't use HTML elements (e.g. `<div>`, `<p>`, `<input>`),
 </View>
 ```
 
-The `<View>` component is the equivalent of a `<div>` or a `<span>` component in html, we use it to group other components together, structure them and add some container styling.
+The [`<View>`](https://facebook.github.io/react-native/docs/view) component is the equivalent of a `<div>` or a `<span>` component in html, we use it to group other components together, structure them and add some container styling.
 
-The `<Text>` component is used to output text.
+The [`<Text>`](https://facebook.github.io/react-native/docs/text) component is used to output text.
 
 You style React Native Apps by using JavaScript, all of the core components accept a `style` prop. Android & IOS devices don't support CSS, but React Native emulates the idea of CSS. You can directly pass a JavaScript object to the `style` prop, but typically you'll use the `StyleSheet` component, which is basically an abstraction similar to CSS StyleSheets and also add validation and potential performance improvements compared to passing a POJO to the `style` prop.
 
@@ -134,6 +134,33 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 20
+  }
+});
+```
+
+### Text Input
+
+the [`<TextInput>`](https://facebook.github.io/react-native/docs/textinput) component allows us to input text into the app via a keyboard.
+
+```js
+...
+<View style={styles.container}>
+  <TextInput
+    style={styles.textInput}
+    placeholder="Please enter a name"
+    onChangeText={newName => setName(newName)}
+  />
+  ...
+</View>
+  ...
+  const styles = StyleSheet.create({
+  ...
+  textInput: {
+    width: "70%",
+    borderColor: "black",
+    borderWidth: 1,
+    padding: 10,
+    marginBottom: 10
   }
 });
 ```
