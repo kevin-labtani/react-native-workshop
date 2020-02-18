@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
 
 ### Text Input
 
-the [`<TextInput>`](https://facebook.github.io/react-native/docs/textinput) component allows us to input text into the app via a keyboard.
+The [`<TextInput>`](https://facebook.github.io/react-native/docs/textinput) component allows us to input text into the app via a keyboard.
 
 ```js
 ...
@@ -164,6 +164,71 @@ the [`<TextInput>`](https://facebook.github.io/react-native/docs/textinput) comp
   }
 });
 ```
+
+### Lists with ScrollView
+
+```js
+// starting code for App.js
+import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
+
+export default function App() {
+  const [items, setItems] = useState([
+    { name: "apple", id: "1" },
+    { name: "desk", id: "2" },
+    { name: "tomato", id: "3" },
+    { name: "computer", id: "4" },
+    { name: "coffee", id: "5" },
+    { name: "projector", id: "6" },
+    { name: "bag", id: "7" }
+  ]);
+
+  return <View style={styles.container}></View>;
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#eee",
+    paddingTop: 40,
+    paddingHorizontal: 20
+  }
+});
+```
+
+The [`<ScrollView>`](https://facebook.github.io/react-native/docs/using-a-scrollview) component provides us with a way of outputing a scrollable list. ScrollView works by rendering all its child components at once.
+
+To output a list you can just map over an array of items the way you do it in React.JS:
+
+```js
+<View style={styles.container}>
+  {items.map(item => {
+    return (
+      <View key={item.id}>
+        <Text style={styles.item}>{item.name}</Text>
+      </View>
+    );
+  })}
+</View>
+```
+
+If we apply some styling to our list of items...
+
+```js
+const styles = StyleSheet.create({
+  ...
+  item: {
+    padding: 25,
+    marginVertical: 12,
+    backgroundColor: "lightsteelblue",
+    borderColor: "black",
+    borderWidth: 1,
+    fontSize: 24
+  }
+});
+```
+We notice than while the list renders okay, it's not possible to scroll the list!
+Simply wrap the outer `<View>` with a `<ScrollView>` component and you'll get a scrollable list.
 
 ## Debugging React Native Apps
 
