@@ -29,7 +29,32 @@ Expo provides us with a managed app development environment, similar to create-r
    3. Launch the emulator by clicking the green play button/
 5. launch your Expo App on the emulator by going to the **Expo DevTools** window in your browser and click on _Run on Android device/emulator_
 
-## What is React Native
+## What is React Native?
+
+React Native is an open-source mobile application framework created by Facebook.
+It is used to develop applications for Android, iOS, Web and UWP by enabling developers to use React along with native platform capabilities.
+An incomplete port for Qt also exists.
+
+Facebook released the first version for the React JavaScript Configuration in 2015.
+
+### Differences between React.js and React Native
+
+| React.js                                             | React Native                                                    |
+| :--------------------------------------------------- | :-------------------------------------------------------------- |
+|                                                      |                                                                 |
+| JavaScript library;                                  | JavaScript framework;                                           |
+|                                                      |                                                                 |
+| create user-friendly and responsive UI components;   | build native applications (Android, iOS, Web and UWP);          |
+|                                                      |                                                                 |
+| uses HTML;                                           | doesn't use HTML;                                               |
+|                                                      |                                                                 |
+| the browser code is rendered through virtual DOM;    | uses Native API for rendering components on mobile;             |
+|                                                      |                                                                 |
+| uses CSS components;                                 | uses Stylesheets for building UI and do not use CSS;            |
+|                                                      |                                                                 |
+| CSS helps to create animations;                      | the Animated API;                                               |
+|                                                      |                                                                 |
+| needs third-party library tools for the dev process; | doesn’t need any third party library tools for its dev process; |
 
 ## React Native Basics
 
@@ -61,3 +86,9 @@ const styles = StyleSheet.create({
   }
 });
 ```
+
+## Debugging React Native Apps
+
+![Debbuging react native - debug](./img/debug.png)
+
+The best way to debug your React Native App is to use React Native Debugger. You can find all information about this tool [on its official github](https://github.com/jhen0409/react-native-debugger).
