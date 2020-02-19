@@ -202,13 +202,11 @@ To output a list you can just map over an array of items the way you do it in Re
 
 ```js
 <View style={styles.container}>
-  {items.map(item => {
-    return (
-      <View key={item.id}>
-        <Text style={styles.item}>{item.name}</Text>
-      </View>
-    );
-  })}
+  {items.map(item => (
+    <View key={item.id}>
+      <Text style={styles.item}>{item.name}</Text>
+    </View>
+  ))}
 </View>
 ```
 
@@ -227,8 +225,24 @@ const styles = StyleSheet.create({
   }
 });
 ```
+
 We notice than while the list renders okay, it's not possible to scroll the list!
 Simply wrap the outer `<View>` with a `<ScrollView>` component and you'll get a scrollable list.
+
+### FlatList
+
+ScrollView renders all its child components at once, so if you have a very long list of items you want to display, there's a severe performance downside and you'll end up with slow rendering and increased memory usage.
+
+The [`<FlatList/>`](https://facebook.github.io/react-native/docs/flatlist) component renders its items when they are about to appear, and removes items that scroll off screen to save memory and processing time.
+
+```js
+<View style={styles.container}>
+  <FlatList
+    data={items}
+    renderItem={({ item }) => <Text style={styles.item}>{item.name}</Text>}
+  />
+</View>
+```
 
 ## Debugging React Native Apps
 
