@@ -244,6 +244,26 @@ The [`<FlatList/>`](https://facebook.github.io/react-native/docs/flatlist) compo
 </View>
 ```
 
+### Touchable Components
+
+You can build your own button like components with any of the "Touchable" components provided by React Native.
+
+We'll use [`<TouchableOpacity>`](https://facebook.github.io/react-native/docs/touchableopacity) here. On press down, this component provide visual feedback by reducing the opacity of the wrapped view. TouchableOpacity supports both `style` and `onPress` props.
+
+```js
+<View style={styles.container}>
+  <FlatList
+    keyExtractor={item => item.id}
+    data={items}
+    renderItem={({ item }) => (
+      <TouchableOpacity onPress={() => PressHandler(item.id)}>
+        <Text style={styles.item}>{item.name}</Text>
+      </TouchableOpacity>
+    )}
+  />
+</View>
+```
+
 ## Debugging React Native Apps
 
 ![Debbuging react native - debug](./readme-pics/debug.png)
