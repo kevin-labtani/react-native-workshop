@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
 ```
 ### 1.4
 
-Now you have to import your Header component in the App.js and replace the comment "Header" with the < Header /> component.
+Now you have to import your Header component in the App.js and replace the comment "Header" with the ``` < Header /> ``` component.
 Finally, you should have this code in your App.js 
 
 ```js

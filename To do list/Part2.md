@@ -4,9 +4,9 @@ In this part, you will style the todos and add some press events to them.
 
 ### 2.1
 
- You start with creating of a separate <TodoItem /> component for todo template. Remplace 
- ```js <Text>{item.text}</Text>``` 
- with the new component, then inside components folder create a new file 'todoItem.js'. 
+ You start with creating of a separate ``` <TodoItem /> ``` component for todo template. Remplace 
+ ``` <Text>{item.text}</Text>``` 
+ with the new component, then inside "components" folder create a new file 'todoItem.js'. 
 
  First of all, you copy-paste this code at the top of the new file.
 
@@ -17,11 +17,11 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 TouchableOpacity is a wrapper for making views respond properly to touches. On press down, the opacity of the wrapped view is decreased, dimming it.
 
-Then create a function "TodoItem", which has just one prop "props" and export this function by default. Now go to the App.js and pass prop item={item} to the <TodoItem /> component. After return to the todoItem.js and replace "props" with {item}, and now we can use item(todo) inside TodoItem function. 
+Then create a function "TodoItem", which has just one prop "props" and export this function by default. Now go to the App.js and pass prop item={item} to the ``` <TodoItem />``` component. After return to the todoItem.js and replace "props" with {item}, and now we can use item(todo) inside TodoItem function. 
 
 ### 2.2
 
-Now make TodoItem function return 
+Now add return in TodoItem function with the following code 
 ```js
 <TouchableOpacity>
     <View style={styles.item}>
@@ -45,13 +45,13 @@ item: {
         borderRadius: 10
     }
 ```
-Now go to the App.js and import new <TodoItem> component.
+Now go to the App.js and import new ``` <TodoItem /> ``` component.
 
 ### 2.3
 
 And now you have just one thing to do to finish this part.
 
-In the <TouchableOpacity> component of the todoItem.js write a function 
+In the ``` <TouchableOpacity> ``` component of the todoItem.js write a function 
 ```js
 <TouchableOpacity onPress={() => pressHandler(item.key)}>
 ```
@@ -64,7 +64,7 @@ const pressHandler = (key) => {
     });
 }
 ```
-Then you need to pass this function as the second prop in <TodoItem /> component.
+Then you need to pass this function as the second prop in ``` <TodoItem /> ``` component.
 
 ```js
 <TodoItem item={item} pressHandler={pressHandler}/>
@@ -161,3 +161,5 @@ const styles = StyleSheet.create({
   }
 });
 ```
+
+You are ready to make [The part - 3](Part3.md).
