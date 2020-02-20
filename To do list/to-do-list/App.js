@@ -6,9 +6,9 @@ import AddToDo from './components/addToDo';
 
 export default function App() {
   const [todos, setTodos] = useState([
-    {text: 'buy coffe', key: '1'},
-    {text: 'create an app', key: '2'},
-    {text: 'play on the switch', key: '3'}
+    {text: 'Create a react native app', key: '1'},
+    {text: 'Dont worry', key: '2'},
+    {text: 'Be happy', key: '3'}
   ]);
 
   const pressHandler = (key) => {

@@ -35,7 +35,7 @@ to use data props just copy this array with objects, where every object represen
 
 ```js
   const [todos, setTodos] = useState([
-    {text: 'Create an react native app', key: '1'},
+    {text: 'Create a react native app', key: '1'},
     {text: 'Dont worry', key: '2'},
     {text: 'Be happy', key: '3'}
   ])
@@ -124,7 +124,7 @@ import Header from './components/header';
 
 export default function App() {
   const [todos, setTodos] = useState([
-    {text: 'Create an react native app', key: '1'},
+    {text: 'Create a react native app', key: '1'},
     {text: 'Dont worry', key: '2'},
     {text: 'Be happy', key: '3'}
   ])
