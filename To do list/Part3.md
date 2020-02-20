@@ -60,7 +60,7 @@ At least go to the App.js and import new component:
 import AddToDo from './components/addToDo';
 ´´´
 
-and replace the comment ´´´ {/* to form */} ´´´ with that component ´´´< AddToDo />´´´.
+and replace the comment ``` {/* to form */} ```  with that component ``` < AddToDo /> ```.
 
 ### 3.2
 
