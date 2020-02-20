@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-The [`<ScrollView>`](https://facebook.github.io/react-native/docs/using-a-scrollview) component provides us with a way of outputing a scrollable list. ScrollView works by rendering all its child components at once.
+The [`<ScrollView>`](https://facebook.github.io/react-native/docs/using-a-scrollview) component provides us with a way of outputting a scrollable list. ScrollView works by rendering all its child components at once.
 
 To output a list you can just map over an array of items the way you do it in React.JS:
 
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-We notice than while the list renders okay, it's not possible to scroll the list!
+We notice that while the list renders okay, it's not possible to scroll the list!
 Simply wrap the outer `<View>` with a `<ScrollView>` component and you'll get a scrollable list.
 
 ### FlatList
@@ -248,7 +248,7 @@ The [`<FlatList/>`](https://facebook.github.io/react-native/docs/flatlist) compo
 
 You can build your own button like components with any of the "Touchable" components provided by React Native.
 
-We'll use [`<TouchableOpacity>`](https://facebook.github.io/react-native/docs/touchableopacity) here. On press down, this component provide visual feedback by reducing the opacity of the wrapped view. TouchableOpacity supports both `style` and `onPress` props.
+We'll use [`<TouchableOpacity>`](https://facebook.github.io/react-native/docs/touchableopacity) here. On press down, this component provides visual feedback by reducing the opacity of the wrapped view. TouchableOpacity supports both `style` and `onPress` props.
 
 ```js
 <View style={styles.container}>
@@ -266,6 +266,6 @@ We'll use [`<TouchableOpacity>`](https://facebook.github.io/react-native/docs/to
 
 ## Debugging React Native Apps
 
-![Debbuging react native - debug](./readme-pics/debug.png)
+![Debugging react native - debug](./readme-pics/debug.png)
 
 The best way to debug your React Native App is to use React Native Debugger. You can find all information about this tool [on its official github page](https://github.com/jhen0409/react-native-debugger).
