@@ -44,11 +44,15 @@ to use data props just copy this array with objects, where every object represen
 Now you will style the components, so you need to create props:
 
 ```js
-content: { 
-  padding: 40 
+container: {
+  flex: 1,
+  backgroundColor: '#fff'
 },
-list: { 
-  marginTop: 20 
+content: {
+  padding: 40,
+},
+list: {
+  marginTop: 20
 }
 ```
 
@@ -69,18 +73,16 @@ Now you need to create a StyleSheet as well. Inside your styles object you have 
 
 ```js
 header: {
-        height: 100,
-        backgroundColor: '#800080',
-        paddingTop: 40,
-        width: '100%' 
+  height: 80,
+  backgroundColor: '#800080',
+  paddingTop: 40,
 },
- title: {
-        textAlign: 'center',
-        color: "#fff",
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginTop: 30
-}
+  title: {
+  textAlign: 'center',
+  color: "#fff",
+  fontSize: 20,
+  fontWeight: 'bold'
+  }
 ```
 This how your code should look like in the header.js
 
@@ -97,19 +99,17 @@ export default function Header() {
 };
 
 const styles = StyleSheet.create({
-    header: {
-        height: 100,
-        backgroundColor: '#800080',
-        paddingTop: 40,
-        width: '100%'
-    },
-    title: {
-        textAlign: 'center',
-        color: "#fff",
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginTop: 30
-    }
+  header: {
+    height: 80,
+    backgroundColor: '#800080',
+    paddingTop: 40,
+  },
+  title: {
+    textAlign: 'center',
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: 'bold'
+  }
 });
 ```
 ### 1.4
@@ -149,9 +149,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#fff'
   },
   content: {
     padding: 40,

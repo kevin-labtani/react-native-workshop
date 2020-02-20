@@ -41,7 +41,7 @@ item: {
         backgroundColor: 'white',
         elevation: 8,
         padding: 20, 
-        margin: 5,
+        margin: 7,
         borderRadius: 10
     }
 ```
@@ -55,7 +55,7 @@ In the ``` <TouchableOpacity> ``` component of the todoItem.js write a function
 ```js
 <TouchableOpacity onPress={() => pressHandler(item.key)}>
 ```
-This function will delete your complited todo. But you can't delete it from this part. So go to the App.js and create new function in function App after the array with todos.
+This function will delete your completed todo. But you can't delete it from this part. So go to the App.js and create new function in function App after the array with todos.
 
 ```js
 const pressHandler = (key) => {
@@ -71,7 +71,7 @@ Then you need to pass this function as the second prop in ``` <TodoItem /> ``` c
 ```
 
 How does it work?
-When you press on one of your todos it will call the function "pressHandler" and pass the item key to it. In the App.js we will receive this key in the pressHandler function and then delete todo with that key from todolist and return a new array of todos.
+When you press on one of your todos it will call the function "pressHandler" and pass the item key to it. In the App.js we will receive this key in the pressHandler function, which deletes todo with that key from todolist and returns a new array of todos.
 
 ### 2.4
 
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         elevation: 8,
         padding: 20, 
-        margin: 5,
+        margin: 7,
         borderRadius: 10
     }
 });
@@ -149,9 +149,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#fff'
   },
   content: {
     padding: 40,
