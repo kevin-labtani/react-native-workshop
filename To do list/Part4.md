@@ -4,10 +4,10 @@ In this part, we will improve the todo app.
 
 ### 4.1
 
-first of all, you will add some validation to the app.
+First of all, you will add some validation to the app.
 If the input text is less than 3 characters, the app will send an alert to the user.
 
-To do it use ``` submitHandler ``` function in App.js. You need to add ``` if else condition ``` to check the number f character. If it's more then 3 chars, it will add the new todos in the list, if not send an alert. To use ``` Alert ``` component you must to import it from React-Native, besides you can delete  ``` <Text> ``` component from import because we don't use it anymore.
+To do it use ``` submitHandler ``` function in App.js. You need to add ``` if else condition ``` to check the number of character. If it's more then 3 chars, it will add the new todos in the list, if not send an alert. To use ``` Alert ``` component you must to import it from React-Native, besides you can delete  ``` <Text> ``` component from import because we don't use it anymore.
 ```js
 import { StyleSheet, Alert, View, FlatList } from 'react-native';
 ```
@@ -73,7 +73,7 @@ So  now when you touch anywere in the screen,  ```onPress``` will aplay dissmiss
 ### 4.3
 
 It's time to remove a small problem with a ``` <FlatList>```, because if you now add a lot of todos you'll realize, that you can't see the last todos, because it's out of the screen bottom. It happens because the ``` <FlatList>``` is pushed by ``` <TextInput>``` down.
-It's very simple to do, you just need to add ``` flex: 1  ``` to the ``` styles.content``` and ``` styles.list ```. It means, that the components take just all available space, and the can't pass the screen.
+It's very simple to fix, you just need to add ``` flex: 1  ``` to the ``` styles.content``` and ``` styles.list ``` in App.js. It means, that the components take just all available space, and they can't pass the screen.
 
 ```js
 const styles = StyleSheet.create({
@@ -104,7 +104,7 @@ import { Feather } from '@expo/vector-icons';
 
 ``` { Feather } ``` is the source of the icon.
 
-Now create a new ``` <Feather> ``` component inside of the ``` <View> ``` component before the ``` <Text> ``` component. it has props: name, it's the name of using icon; size and color of the icon.
+Now create a new ``` <Feather> ``` component inside of the ``` <View> ``` component before the ``` <Text> ``` component. It has props: name, it's the name of using icon; size and color of the icon.
 ```js
 <View style={styles.item}>
   <Feather name='delete'size={18} color='#333'/>
@@ -136,13 +136,13 @@ const styles = StyleSheet.create({
 ```
 
 ### 4.5
-So we have already done almost all the work, but a couple of things to do.
+So we have already done almost all the work, but still have a couple of things to do.
 Now we will use custom fonts in our app.
 
 In the assets folder create a new folder "fonts". 
-We will use [open sans font](https://fonts.google.com/specimen/Open+Sans) from Google Fonts, but you can use any font that you like. You just need to download the font and copy-past all files from it to ``` assets/fonts```.
+We will use [open sans font](https://fonts.google.com/specimen/Open+Sans) from Google Fonts, but you can use any font that you like. You just need to download the font and copy-past all "ttf" files from it to ``` assets/fonts```.
 
-Then in the App. import fonts from the folder.
+Then in the App.js import fonts from the folder.
 ```js
 import * as Fonts from 'expo-font';
 ```
@@ -159,7 +159,7 @@ const fetchFonts = () => {
 }
 ```
 It returns an object of our fonts, where we write a name of the font and using ``` require ``` you show the path to the chosen font.
-This function returns a promise, so it cant be loaded immediately. In this situation you have to use a special component ``` < AppLoading > ``` from 'expo', so import it in App.js. It will prolong the loading screen time until the fonts load. 
+This function returns a promise, so it can't be loaded immediately. In this situation you have to use a special component ``` < AppLoading > ``` from 'expo', so import it in App.js. It will prolong the loading screen time until the fonts load. 
 ```js
 import { AppLoading } from 'expo';
 ```
@@ -168,7 +168,7 @@ To make this component works you can use states.
 const [dataLoaded, setDataLoaded] = useState(false);
 ```
 You write it below the todolist array in the ``` App function ```. 
-Then we write a function that will check a state of DataLoaded(fonts) and if it's false, it will return a ```< AppLoading > component.
+Then we write a function that will check a state of DataLoaded(fonts) and if it's false, it will return a ```< AppLoading > ``` component.
  
 ```js
  const [dataLoaded, setDataLoaded] = useState(false);
