@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
 export default function TodoItem({item, pressHandler}) {
     return (
         <TouchableOpacity onPress={() => pressHandler(item.key)}>
             <View style={styles.item}>
-                <Text>
+                <Feather name='delete'size={18} color='#333'/>
+                <Text style={styles.text}>
                 {item.text}
                 </Text>
             </View>
@@ -23,6 +25,11 @@ const styles = StyleSheet.create({
         elevation: 8,
         padding: 20, 
         margin: 7,
-        borderRadius: 10
+        borderRadius: 10,
+        flexDirection: 'row'
+    },
+    text: {
+        marginLeft: 10,
+        fontFamily: 'open-sans-italic'
     }
 });

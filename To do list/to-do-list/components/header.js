@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: "#fff",
         fontSize: 20,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontFamily: 'open-sans'
     }
 });

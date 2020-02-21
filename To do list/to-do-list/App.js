@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Alert, View, FlatList, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import Header from './components/header';
 import TodoItem from './components/todoItem';
 import AddToDo from './components/addToDo';
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
+
+
+const fetchFonts = () => {
+  return Font.loadAsync({
+    'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
+    'open-sans-italic': require('./assets/fonts/OpenSans-Italic.ttf')
+  });
+}
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -10,6 +20,15 @@ export default function App() {
     {text: 'Dont worry', key: '2'},
     {text: 'Be happy', key: '3'}
   ]);
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  if (!dataLoaded) {
+    return <AppLoading 
+              startAsync={fetchFonts} 
+              onFinish={() => setDataLoaded(true)}
+              onError={(err) => console.log(err)}
+            />
+  }
 
   const pressHandler = (key) => {
     setTodos((prevTodos)=> {
@@ -18,28 +37,36 @@ export default function App() {
   }
 
   const submitHandler = (text) => {
-    setTodos((prevTodos) => {
-      return [
-        {text: text, key: Math.random().toString()},
-        ...prevTodos
-      ]
-    })
+    if(text.length > 3) {
+      setTodos((prevTodos) => {
+        return [
+          {text: text, key: Math.random().toString()},
+          ...prevTodos
+        ]
+      });
+    } else {
+      Alert.alert('OOPS!', 'Todos must be over 3 chars long', [
+        {text: 'OK'}
+      ]);
+    }
   }
   return (
-    <View style={styles.container}>
-     <Header />
-     <View style={styles.content}>
-       <AddToDo submitHandler={submitHandler}/>
-       <View style={styles.list}>
-          <FlatList
-          data={todos}
-          renderItem={({ item }) => (
-          <TodoItem item={item} pressHandler={pressHandler}/>
-          )}
-          />
-        </View>
-     </View>
-    </View>
+    <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss()}}>
+      <View style={styles.container}>
+      <Header />
+      <View style={styles.content}>
+        <AddToDo submitHandler={submitHandler}/>
+        <View style={styles.list}>
+            <FlatList
+            data={todos}
+            renderItem={({ item }) => (
+            <TodoItem item={item} pressHandler={pressHandler}/>
+            )}
+            />
+          </View>
+      </View>
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -49,9 +76,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   content: {
+    flex: 1,
     padding: 40,
   },
   list: {
+    flex: 1,
     marginTop: 20
   }
 });
