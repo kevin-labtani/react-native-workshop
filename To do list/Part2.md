@@ -17,35 +17,53 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 TouchableOpacity is a wrapper for making views respond properly to touches. On press down, the opacity of the wrapped view is decreased, dimming it.
 
-Then create a function "TodoItem", which has just one prop "props" and export this function by default. Now go to the App.js and pass prop item={item} to the ``` <TodoItem />``` component. After return to the todoItem.js and replace "props" with {item}, and now we can use item(todo) inside TodoItem function. 
+Then create a function "TodoItem", which has just one prop "props" and export this function by default. Now go to the App.js and pass prop item={item} to the ``` <TodoItem />``` component.
+```js
+ <TodoItem item={item} />
+ ```
+ After return to the todoItem.js and replace "props" with {item}, and now we can use item(todo) inside TodoItem function. 
+```js
+export default function TodoItem({item}) {
+
+};
+```
 
 ### 2.2
 
 Now add return in TodoItem function with the following code 
 ```js
-<TouchableOpacity>
-    <View style={styles.item}>
-        <Text>
-        {item.text}
-        </Text>
-    </View>
-</TouchableOpacity>
+export default function TodoItem({item}) {
+  return (
+    <TouchableOpacity>
+        <View style={styles.item}>
+            <Text>
+            {item.text}
+            </Text>
+        </View>
+    </TouchableOpacity>
+  )
+};
 ```
 Then create const Styles using styleSheet.create function and pass this props to it:
 ```js
-item: {
-        shadowColor: 'black',
-        shadowOffset: {width: 0, heigth: 2},
-        shadowRadius: 4,
-        shadowOpacity: .26,
-        backgroundColor: 'white',
-        elevation: 8,
-        padding: 20, 
-        margin: 7,
-        borderRadius: 10
-    }
+const styles = StyleSheet.create({
+  item: {
+          shadowColor: 'black',
+          shadowOffset: {width: 0, heigth: 2},
+          shadowRadius: 4,
+          shadowOpacity: .26,
+          backgroundColor: 'white',
+          elevation: 8,
+          padding: 20, 
+          margin: 7,
+          borderRadius: 10
+      }
+});
 ```
 Now go to the App.js and import new ``` <TodoItem /> ``` component.
+``js
+import TodoItem from './components/todoItem';
+```
 
 ### 2.3
 

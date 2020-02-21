@@ -18,7 +18,18 @@ expo start
 
 Then open App.js file and import { useState } from React and {  StyleSheet, Text, View, FlatList } from React Native.
 Delete everything that you see in the return of the function App, just keep the first View with the style prop {styles.container}.
+```js
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
+export default function App() {
+  return (
+    <View style={styles.container}>
+
+    </View>
+  );
+}
+```
 ### 1.2
 
 In this View write a comment "Header", this is the place for our future header of the app.
@@ -26,10 +37,24 @@ After the comment create another View component with the style {styles.content}.
 Now you can create < FlatList /> component with props :
 
 ```js
-data = {todos} 
-renderItem={({item}) => (
-  <Text>{item.text}</Text>
-)}
+export default function App() {
+  return (
+    <View style={styles.container}>
+     {/* Header */}
+     <View style={styles.content}>
+       {/* to form */}
+        <View  style={styles.list}>
+          <FlatList
+          data={todos}
+          renderItem={({ item }) => (
+          <Text>{item.text}</Text>
+          )}
+          />
+        </View>
+      </View>
+    </View>
+  );
+}
 ```
 to use data props just copy this array with objects, where every object represents one todo. Each object has its text and key properties, and paste it before the return of Function App.
 
@@ -44,16 +69,18 @@ to use data props just copy this array with objects, where every object represen
 Now you will style the components, so you need to create props:
 
 ```js
-container: {
-  flex: 1,
-  backgroundColor: '#fff'
-},
-content: {
-  padding: 40,
-},
-list: {
-  marginTop: 20
-}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff'
+  },
+  content: {
+    padding: 40,
+  },
+  list: {
+    marginTop: 20
+  }
+});
 ```
 
 ## 1.3
@@ -68,21 +95,31 @@ import {StyleSheet, Text, View} from 'react-native';
 ```
 
 Now you need to create a new functional component Header, using "default export" because you want to export it automatically. Inside this function, you will return a View component with a Text component, that says 'My Todos'. The View has style property {styles.header} and the Text component - {styles.title}.
-
+```js
+export default function Header() {
+    return (
+        <View style={styles.header}>
+            <Text style={styles.title}>My Todos</Text>
+        </View>
+    )
+};
+```
 Now you need to create a StyleSheet as well. Inside your styles object you have props:
 
 ```js
-header: {
-  height: 80,
-  backgroundColor: '#800080',
-  paddingTop: 40,
-},
-  title: {
-  textAlign: 'center',
-  color: "#fff",
-  fontSize: 20,
-  fontWeight: 'bold'
-  }
+const styles = StyleSheet.create({
+  header: {
+    height: 80,
+    backgroundColor: '#800080',
+    paddingTop: 40,
+  },
+    title: {
+    textAlign: 'center',
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: 'bold'
+    }
+});
 ```
 This how your code should look like in the header.js
 

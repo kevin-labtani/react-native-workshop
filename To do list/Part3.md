@@ -9,7 +9,7 @@ In "components" folder create a new file "addToDo.js" and copy-paste the folowin
 import React, { useState} from 'react';
 import { StyleSheet, Text, TextInput, Button} from 'react-native';
 ```
-Here we need to use state hook {useState}, because we will keep track what a user is typing in the input.
+Here we need to use state hook {useState}, because we will keep track what the user is typing in the input.
 
 Now we create a component ``` < AddToDO  /> ``` using default export. It returns ```<View>``` and inside it ```<TextInput />``` components.
 
@@ -55,21 +55,21 @@ const styles = StyleSheet.create({
     }
 });
 ```
-At least go to the App.js and import new component:
-´´´js
+At last go to the App.js and import new component:
+```js
 import AddToDo from './components/addToDo';
-´´´
+```
 
 and replace the comment ``` {/* to form */} ```  with that component ``` < AddToDo /> ```.
 
 ### 3.2
 
-Now return to the addToDO.js file and add a  ``` <Button /> ``` component below ``` <TextInput /> ```.
+Now return to the addToDo.js file and add a  ``` <Button /> ``` component below ``` <TextInput /> ```.
 
 ```js
 <Button onPress={pressHandler} title='add todo' color='purple'/>
 ```
-The button has title and color props. Also you can see ``` onPress ``` event, so when you will press that button the ``` pressHandler ``` function will be called. So let's create this function!
+The button has title and color props. Also you can see ``` onPress ``` event, so when you will press that button the ``` pressHandler ``` function will be called. So let's create this function, write it above the ``` changeHandler ``` function.
 ```js
 const pressHandler = () => {
         submitHandler(text);
@@ -80,7 +80,7 @@ It calls the ``` submitHandler``` function that has just one parameter - the tex
 
 ### 3.3
 
-Open the App.js file and create the ``` submitHandler ``` function above ``` pressHandler ``` funcrion.
+Open the App.js file and create the ``` submitHandler ``` function above ``` pressHandler ``` function.
 ```js
 const submitHandler = (text) => {
     setTodos((prevTodos) => {
@@ -91,14 +91,14 @@ const submitHandler = (text) => {
     })
   }
 ```
-This function gets new todo(text) and updates useState with the ToDoList. It returns a new array with all previous todos with the new item as well. For a new todo you need to set text prop that is equal to text parametre and the key prop. The key should be unique, so for this example, we will use ``` Math.random() ```, but it's not a good practice, so we will change it later.
+This function gets new todo(text) and updates useState with the ToDoList. It returns a new array with all previous todos and the new item as well. For a new todo you need to set text prop that is equal to text parametre and the key prop. The key should be unique, so for this example, we will use ``` Math.random() ```, but it's not a good practice, so we will change it later.
 
 Now pass ``` submitHundler ``` as a prop in ``` <AddToDo  /> ``` component to call it from the button of addToDo.js.
 ```js
 <AddToDo submitHandler={submitHandler}/>
 ```
 
-At final thing - in the addToDo.js pass ``` {submitHandler} ``` as a prop for the function AddToDo.
+And the final thing - in the addToDo.js pass ``` {submitHandler} ``` as a prop for the function AddToDo.
 
 
 ### 3.4
