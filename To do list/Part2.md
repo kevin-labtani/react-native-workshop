@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
 });
 ```
 Now go to the App.js and import new ``` <TodoItem /> ``` component.
-``js
+```js
 import TodoItem from './components/todoItem';
 ```
 
