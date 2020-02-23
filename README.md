@@ -1,10 +1,23 @@
 # React Native Workshop
 
+## Before the Workshop
+
+You'll need to bring a fully charged mobile phone with you.
+Please go through the following steps before the Workshop:  
+(for Ubuntu users)
+
+0. Install an up-to-date version of Node.js (should already be the case).
+1. Open a terminal and run `sudo npm install expo-cli --global`.
+1. Make a directory to host the workshop files eg. `mkdir rn-workshop`, and then `cd` into it.
+1. Let's create our first app; in the workshop directory, run `expo init hello-world`, pick "blank - a minimal app as clean as an empty canvas" when prompted for an option.
+1. Let's create our second app; **in the same workshop directory**, run `expo init todo-list`, pick "blank - a minimal app as clean as an empty canvas" when prompted for an option.
+1. Install the Expo Client App on your mobile phone; simply search for _Expo client_ in your app store and install it on your device.
+
 ## Getting Started
 
 We have two options for creating a new React Native App, either **Expo CLI** or **React Native CLI**.
 We'll be using the **Expo CLI** in this workshop; it's a 3rd party service that's free to use, you don't even need to sign-up!
-Expo provides us with a managed app development environment, similar to create-react-app for React. The main downside with Expo is that you're limited to its ecosystem, so it's not possible to include custom native modules beyond the React Native APIs and components that are available in the Expo client app; but much like with create-react-app it'ICs possible to eject from Expo if you want to eventually create your own native build.
+Expo provides us with a managed app development environment, similar to create-react-app for React. The main downside with Expo is that you're limited to its ecosystem, so it's not possible to include custom native modules beyond the React Native APIs and components that are available in the Expo client app; but much like with create-react-app it's possible to eject from Expo if you want to eventually create your own native build.
 
 ### Installation Steps
 
@@ -12,7 +25,7 @@ Expo provides us with a managed app development environment, similar to create-r
 1. Visit [Expo.io](https://expo.io/learn) and install the Expo command line tool by typing `npm install expo-cli --global` in your terminal, if you run into permissions issues install the tool with `sudo npm install expo-cli --global` instead.
    1. MacOS only: [Install Watchman](https://facebook.github.io/watchman/docs/install.html) with `brew install watchman`
 1. Let's create our first project! in your terminal, navigate to a folder where you want to create the project and run `expo init hello-world`, select the template `blank - a minimal app as clean as an empty canvas` and wait for the installation to finish, then `cd hello-world` and run `npm start` to start up the expo dev tools. You will need to leave that process running in the background.
-1. A tab should open in your browser at `http://localhost:19002/`, please switch to it; this is the **Expo DevTools** and it allows you to run your app on devices simulators or on connected devices. Due to network issues here at A6K you'll need to pick _tunnel_ as a connection method, please make sure the tunnel url looks like `exp://dp-k8n.kevinlabtani.hello-world.exp.direct:80` rather than `exp://192.168.1.5:19000`, if it doesn't you'll get the message _Tunnel URL not found, falled back to LAN URL._ in your console window, please stop the Expo server by typing `CTRL + C` and then restart it with `npm start`; running it as admin `sudo npm start` or forcing tunnel mode at startup with `sudo expo start --tunnel` instead might help.
+1. A tab should open in your browser at `http://localhost:19002/`, please switch to it; this is the **Expo DevTools** and it allows you to run your app on devices simulators or on connected devices. Due to network issues here at A6K you'll need to pick _tunnel_ as a connection method, please make sure the tunnel url looks like `exp://dp-k8n.kevinlabtani.hello-world.exp.direct:80` rather than `exp://192.168.1.5:19000`, if it doesn't you'll get the message _Tunnel URL not found, falled back to LAN URL._ in your terminal window, please stop the Expo server by typing `CTRL + C` and then restart it with `npm start`; running it as admin `sudo npm start` or forcing tunnel mode at startup with `sudo expo start --tunnel` instead might help.
 
    ![tunnel](./readme-pics/expo-dev-tools-tunnel.png)
 
