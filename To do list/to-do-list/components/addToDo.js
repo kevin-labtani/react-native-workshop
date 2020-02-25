@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, Button, View } from "react-native";
-import FlatButton from "./button";
+import RoundedButton from "./button";
 
 export default function AddToDo({ submitHandler }) {
   const [text, setText] = useState("");
@@ -22,7 +22,7 @@ export default function AddToDo({ submitHandler }) {
         onChangeText={changeHandler}
         value={text}
       />
-      <FlatButton onPress={pressHandler} title="add todo" />
+      <RoundedButton onPress={pressHandler} title="add todo" />
       {/* <Button onPress={pressHandler} title="add todo" color="purple" /> */}
     </View>
   );

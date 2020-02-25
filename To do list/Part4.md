@@ -167,7 +167,7 @@ We will use [open sans font](https://fonts.google.com/specimen/Open+Sans) from G
 Then in the App.js import fonts from the folder.
 
 ```js
-import * as Fonts from "expo-font";
+import * as Font from "expo-font";
 ```
 
 The symbol `*` means all files, and 'expo-font' is a package that gives you fonts, and it should be included by default, but run `expo install expo-font`to be sure.
@@ -251,7 +251,7 @@ and in todoItems.js
 const styles = StyleSheet.create({
   item: {
     shadowColor: "black",
-    shadowOffset: { width: 0, heigth: 2 },
+    shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
     shadowOpacity: 0.26,
     backgroundColor: "white",
@@ -263,7 +263,7 @@ const styles = StyleSheet.create({
   },
   text: {
     marginLeft: 10,
-    fontFamily: "open-sans"
+    fontFamily: "open-sans-italic"
   }
 });
 ```
@@ -283,12 +283,10 @@ Our custom button is basically a `Text` component wrapped in a `View` component 
 We'll pass as a props an `onPress` callback function that's executed when we press on the button and a `title` we use in order to set the text on the button
 
 ```js
-export default function FlatButton({ title, onPress }) {
+export default function RoundedButton({ title, onPress }) {
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View style={styles.button}>
-        <Text style={styles.buttonTitle}>{title}</Text>
-      </View>
+    <TouchableOpacity onPress={onPress} style={styles.button}>
+      <Text style={styles.buttonTitle}>{title}</Text>
     </TouchableOpacity>
   );
 }
@@ -306,7 +304,7 @@ const styles = StyleSheet.create({
   },
   buttonTitle: {
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "open-sans",
     textTransform: "uppercase",
     fontSize: 16,
     textAlign: "center"
@@ -314,11 +312,11 @@ const styles = StyleSheet.create({
 });
 ```
 
-That's it, our `FlatButton` component is all done! We'll now import it in our addToDo component and replace the default `Button` with it:
+That's it, our `RoundedButton` component is all done! We'll now import it in our addToDo component and replace the default `Button` with it:
 
 ```js
-import FlatButton from "./button";
+import RoundedButton from "./button";
 ...
-<FlatButton onPress={pressHandler} title="add todo" />
+<RoundedButton onPress={pressHandler} title="add todo" />
   {/* replace <Button onPress={pressHandler} title="add todo" color="purple" /> */}
 ```
