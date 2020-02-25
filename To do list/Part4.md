@@ -125,13 +125,13 @@ import { Feather } from "@expo/vector-icons";
 
 `{ Feather }` is the source of the icon.
 
-Now create a new `<Feather>` component inside of the `<View>` component before the `<Text>` component. It has props: name, it's the name of the icon we're using; size and color of the icon.
+Now create a new `<Feather>` component inside of the `<TouchableOpacity>` component before the `<Text>` component. It has props: name, it's the name of the icon we're using; size and color of the icon.
 
 ```js
-<View style={styles.item}>
+<TouchableOpacity style={styles.item} onPress={() => pressHandler(item.key)}>
   <Feather name="delete" size={18} color="#333" />
-  <Text>{item.text}</Text>
-</View>
+  <Text style={styles.text}>{item.text}</Text>
+</TouchableOpacity>
 ```
 
 Just one thing left - style the components a bit more. To make the icon be on the left of the text, add `flexDirection: 'row'` to the `styles.item`. Then create `style={styles.text}` and pass `marginLeft: 10` in it. Now we have a space between the icon and the todos.
@@ -140,7 +140,7 @@ Just one thing left - style the components a bit more. To make the icon be on th
 const styles = StyleSheet.create({
   item: {
     shadowColor: "black",
-    shadowOffset: { width: 0, heigth: 2 },
+    shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
     shadowOpacity: 0.26,
     backgroundColor: "white",
