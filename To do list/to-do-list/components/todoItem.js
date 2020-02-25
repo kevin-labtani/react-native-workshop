@@ -4,11 +4,12 @@ import { Feather } from "@expo/vector-icons";
 
 export default function TodoItem({ item, pressHandler }) {
   return (
-    <TouchableOpacity onPress={() => pressHandler(item.key)}>
-      <View style={styles.item}>
-        <Feather name="delete" size={18} color="#333" />
-        <Text style={styles.text}>{item.text}</Text>
-      </View>
+    <TouchableOpacity
+      onPress={() => pressHandler(item.key)}
+      style={styles.item}
+    >
+      <Feather name="delete" size={18} color="#333" />
+      <Text style={styles.text}>{item.text}</Text>
     </TouchableOpacity>
   );
 }
@@ -16,7 +17,7 @@ export default function TodoItem({ item, pressHandler }) {
 const styles = StyleSheet.create({
   item: {
     shadowColor: "black",
-    shadowOffset: { width: 0, heigth: 2 },
+    shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
     shadowOpacity: 0.26,
     backgroundColor: "white",

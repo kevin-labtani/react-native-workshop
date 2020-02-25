@@ -48,22 +48,20 @@ Now add return in TodoItem function with the following code
 ```js
 export default function TodoItem({ item }) {
   return (
-    <TouchableOpacity>
-      <View style={styles.item}>
-        <Text>{item.text}</Text>
-      </View>
+    <TouchableOpacity style={styles.item}>
+      <Text>{item.text}</Text>
     </TouchableOpacity>
   );
 }
 ```
 
-Then create const Styles using styleSheet.create function and pass this props to it:
+Then create const styles using styleSheet.create function and pass this props to it:
 
 ```js
 const styles = StyleSheet.create({
   item: {
     shadowColor: "black",
-    shadowOffset: { width: 0, heigth: 2 },
+    shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
     shadowOpacity: 0.26,
     backgroundColor: "white",
@@ -120,10 +118,11 @@ import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 
 export default function TodoItem({ item, pressHandler }) {
   return (
-    <TouchableOpacity onPress={() => pressHandler(item.key)}>
-      <View style={styles.item}>
-        <Text>{item.text}</Text>
-      </View>
+    <TouchableOpacity
+      style={styles.item}
+      onPress={() => pressHandler(item.key)}
+    >
+      <Text>{item.text}</Text>
     </TouchableOpacity>
   );
 }
@@ -131,7 +130,7 @@ export default function TodoItem({ item, pressHandler }) {
 const styles = StyleSheet.create({
   item: {
     shadowColor: "black",
-    shadowOffset: { width: 0, heigth: 2 },
+    shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
     shadowOpacity: 0.26,
     backgroundColor: "white",
@@ -153,9 +152,9 @@ import TodoItem from "./components/todoItem";
 
 export default function App() {
   const [todos, setTodos] = useState([
-    { text: "buy coffe", key: "1" },
-    { text: "create an app", key: "2" },
-    { text: "play on the switch", key: "3" }
+    { text: "Create a react native app", key: "1" },
+    { text: "Dont worry", key: "2" },
+    { text: "Be happy", key: "3" }
   ]);
 
   const pressHandler = key => {
@@ -163,6 +162,7 @@ export default function App() {
       return prevTodos.filter(todo => todo.key != key);
     });
   };
+
   return (
     <View style={styles.container}>
       <Header />
@@ -195,4 +195,4 @@ const styles = StyleSheet.create({
 });
 ```
 
-You are ready to make [The part - 3](Part3.md).
+You are ready to go on to [The part - 3](Part3.md).
