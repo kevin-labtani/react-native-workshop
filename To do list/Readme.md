@@ -9,10 +9,10 @@ So now you are ready to create your first React Native Application!
 - [What is React Native?](#What-is-React-Native?)
 - [React Native Basics](#React-Native-Basics)
 - [Debugging React Native Apps](#Debugging-React-Native-Apps)
-- [Todo List App part 1](./To%20do%20list/Readme.md)
-- [Todo List App part 2](./To%20do%20list/Part2.md)
-- [Todo List App part 3](./To%20do%20list/Part3.md)
-- [Todo List App part 4](./To%20do%20list/Part4.md)
+- [Todo List App part 1](Readme.md)
+- [Todo List App part 2](Part2.md)
+- [Todo List App part 3](Part3.md)
+- [Todo List App part 4](Part4.md)
 
 ## Part - 1.
 

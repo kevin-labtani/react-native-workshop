@@ -5,11 +5,10 @@
 - [What is React Native?](#What-is-React-Native?)
 - [React Native Basics](#React-Native-Basics)
 - [Debugging React Native Apps](#Debugging-React-Native-Apps)
-- [Todo List App part 1](./To%20do%20list/Readme.md)
-- [Todo List App part 2](./To%20do%20list/Part2.md)
-- [Todo List App part 3](./To%20do%20list/Part3.md)
-- [Todo List App part 4](./To%20do%20list/Part4.md)
-
+- [Todo List App part 1](Readme.md)
+- [Todo List App part 2](Part2.md)
+- [Todo List App part 3](Part3.md)
+- [Todo List App part 4](Part4.md)
 ## Part - 2
 
 In this part, you will style the todos and add some press events to them.
@@ -88,6 +87,10 @@ In the `<TouchableOpacity>` component of the todoItem.js write a function
 ```js
 <TouchableOpacity onPress={() => pressHandler(item.key)}>
 ```
+- [Todo List App part 1](./To%20do%20list/Readme.md)
+- [Todo List App part 2](./To%20do%20list/Part2.md)
+- [Todo List App part 3](./To%20do%20list/Part3.md)
+- [Todo List App part 4](./To%20do%20list/Part4.md)
 
 This function will delete your completed todo. But you can't delete it from this part. So go to the App.js and create new function in function App after the array with todos.
 
