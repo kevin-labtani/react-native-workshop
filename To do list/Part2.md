@@ -1,10 +1,10 @@
 ## Table of Contents
 
-- [Before the Workshop](../#Before-the-Workshop)
-- [Getting Started](../#Getting-Started)
-- [What is React Native?](../#What-is-React-Native?)
-- [React Native Basics](/#React-Native-Basics)
-- [Debugging React Native Apps](./#Debugging-React-Native-Apps)
+- [Before the Workshop](../README.md/#Before-the-Workshop)
+- [Getting Started](../README.md/#Getting-Started)
+- [What is React Native?](../README.md/#What-is-React-Native?)
+- [React Native Basics](/README.md/#React-Native-Basics)
+- [Debugging React Native Apps](./README.md/#Debugging-React-Native-Apps)
 - [Todo List App part 1](Readme.md)
 - [Todo List App part 2](Part2.md)
 - [Todo List App part 3](Part3.md)
