@@ -1,14 +1,14 @@
 ## Table of Contents
 
-- [Before the Workshop](#Before-the-Workshop)
-- [Getting Started](#Getting-Started)
-- [What is React Native?](#What-is-React-Native?)
-- [React Native Basics](#React-Native-Basics)
-- [Debugging React Native Apps](#Debugging-React-Native-Apps)
-- [Todo List App part 1](../Readme.md)
-- [Todo List App part 2](../Part2.md)
-- [Todo List App part 3](../Part3.md)
-- [Todo List App part 4](../Part4.md)
+- [Before the Workshop](../Before-the-Workshop)
+- [Getting Started](../Getting-Started)
+- [What is React Native?](../What-is-React-Native?)
+- [React Native Basics](/React-Native-Basics)
+- [Debugging React Native Apps](./Debugging-React-Native-Apps)
+- [Todo List App part 1](Readme.md)
+- [Todo List App part 2](Part2.md)
+- [Todo List App part 3](Part3.md)
+- [Todo List App part 4](Part4.md)
 ## Part - 2
 
 In this part, you will style the todos and add some press events to them.
