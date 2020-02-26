@@ -9,7 +9,7 @@
 
 - [Before the Workshop](#Before-the-Workshop)
 - [Getting Started](#Getting-Started)
-- [What is React Native?](#What-is-React-Native?)
+- [What is React Native?](#What-is-React-Native)
 - [React Native Basics](#React-Native-Basics)
 - [Debugging React Native Apps](#Debugging-React-Native-Apps)
 - [Todo List App part 1](./To%20do%20list/Readme.md)

@@ -2,7 +2,7 @@
 
 - [Before the Workshop](../README.md/#Before-the-Workshop)
 - [Getting Started](../README.md/#Getting-Started)
-- [What is React Native?](../README.md/#What-is-React-Native?)
+- [What is React Native?](../README.md/#What-is-React-Native)
 - [React Native Basics](../README.md//#React-Native-Basics)
 - [Debugging React Native Apps](../README.md//#Debugging-React-Native-Apps)
 - [Todo List App part 1](Readme.md)
