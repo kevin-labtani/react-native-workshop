@@ -19,7 +19,7 @@ In "components" folder create a new file "addToDo.js" and copy-paste the folowin
 
 ```js
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, Button } from "react-native";
+import { StyleSheet, View, TextInput, Button } from "react-native";
 ```
 
 Here we need to use state hook {useState}, because we will keep track what the user is typing in the input.
@@ -128,7 +128,7 @@ After making this part you should have the following code in the addToDo.js:
 
 ```js
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, Button, View } from "react-native";
+import { StyleSheet, View, TextInput, Button } from "react-native";
 
 export default function AddToDo({ submitHandler }) {
   const [text, setText] = useState("");
