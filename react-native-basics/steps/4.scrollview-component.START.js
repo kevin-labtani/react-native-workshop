@@ -12,7 +12,9 @@ export default function App() {
     { name: "bag", id: "7" }
   ]);
 
-  return <View style={styles.container}></View>;
+  return (
+  <View style={styles.container}></View>
+  )
 }
 
 const styles = StyleSheet.create({
